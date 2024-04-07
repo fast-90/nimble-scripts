@@ -1,0 +1,1 @@
+*/10 * * * * ~/nimble/scripts/git_check.sh
