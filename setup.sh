@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt update
-apt install make git tmux python3-venv -y
+apt install make git tmux python3-venv cron -y
 
 wget -c https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 tar -C /usr/local/ -xzf go1.22.0.linux-amd64.tar.gz
@@ -11,6 +11,8 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
+
+service start cron
 
 # Create wallet
 mkdir $HOME/nimble && cd $HOME/nimble
