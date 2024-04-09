@@ -26,5 +26,3 @@ git clone https://github.com/nimble-technology/nimble-miner-public.git
 cd nimble-miner-public
 make install
 
-tmux new -As miner
-source ./nimenv_localminers/bin/activate
