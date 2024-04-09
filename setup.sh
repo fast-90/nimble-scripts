@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 apt update
 apt install make git tmux python3-venv cron -y
@@ -12,7 +12,7 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 
-service start cron
+service start cron 
 
 # Create wallet
 mkdir $HOME/nimble && cd $HOME/nimble
@@ -26,3 +26,8 @@ git clone https://github.com/nimble-technology/nimble-miner-public.git
 cd nimble-miner-public
 make install
 
+# Scripts
+cd $HOME/nimble
+git clone https://github.com/fast-90/nimble-scripts.git scripts
+./scripts/tmux_miner.sh
+crontab ./scripts/git_check_cronjob
