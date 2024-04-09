@@ -8,6 +8,7 @@ git fetch
 
 if [ ${output} -lt 15 ] && ! git status | grep -q "Your branch is up to date with 'origin/${local_branch}'"; then
     git pull
+    make install
     ~/nimble/scripts/tmux_miner.sh
 else
     :
